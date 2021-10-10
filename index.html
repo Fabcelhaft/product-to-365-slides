@@ -17,8 +17,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>Legacy-Produkte<br/>in die Cloud</h2>
-					<h4>mit Microsoft 365</h4>
+					<h2>Produkte in die Cloud</h2>
+					<h3>mit Microsoft 365</h3>
 				</section>
 				<section>
 					<section>
@@ -35,22 +35,22 @@
 						</ul>
 					</section>
 					<section data-auto-animate>
-						<img src="img/Microsoft-365-Logo.png">
+						<img src="img/Microsoft-365-Logo.png" alt="Microsoft 365 Logo">
 					</section>
 					<section data-auto-animate>
-						<img src="img/Microsoft-365-Logo.png">
+						<img src="img/Microsoft-365-Logo.png" alt="Microsoft 365 Logo">
 						<b>ehemals:</b>
 						<br/>
-						<img src="img/office-365-Logo.jpg" height="150">
+						<img src="img/office-365-Logo.jpg" height="150" alt="Office 365 Logo">
 					</section>
 					<section data-auto-animate>
-						<img src="img/Microsoft-365-Logo.png">
+						<img src="img/Microsoft-365-Logo.png" alt="Microsoft 365 Logo">
 						<b>ist nicht:</b>
 						<br/>
-						<img src="img/azure-Logo.png" height="150">
+						<img src="img/azure-Logo.png" height="150" alt="Azure Logo">
 					</section>
 					<section data-auto-animate>
-						<img src="img/Microsoft-365-Logo.png" height="150">
+						<img src="img/Microsoft-365-Logo.png" height="150" alt="Microsoft 365 Logo">
 						<blockquote cite="https://www.microsoft.com/de-de/microsoft-365/business?market=de">
 							Microsoft 365 ist die Produktivitätscloud, mit der jeder von uns beruflich und privat sein Bestes geben kann. Die Komplettlösung umfasst erstklassige Office-Anwendungen, intelligente Clouddienste und erweiterte Sicherheit.
 						</blockquote>
@@ -59,7 +59,7 @@
 				<section>
 					<section data-auto-animate>
 						<h1>Datenschutz...</h1>
-						<img src="img/privacy-logo.png" height="300">
+						<img src="img/privacy-logo.png" height="300" alt="Shield Icon">
 					</section>
 					<section data-auto-animate>
 						<h1>Datenschutz...</h1>
@@ -86,7 +86,7 @@
 				</section>
 				<section>
 					<section data-auto-animate>
-						<h1>Beispielanwendung</h1>
+						<h2>Beispielanwendung</h2>
 						<h3>Genehmigungen</h3>
 						<a href="https://github.com/Fabcelhaft/ms-teams-approval-example" target="_blank" rel="noopener noreferrer">Sources</a>
 						<a href="https://ms-teams-approval.fabcelhaft.net/swagger-ui/" target="_blank" rel="noopener noreferrer">Deployment Swagger</a>
@@ -100,6 +100,67 @@
 							<li>...</li>
 						</ul>
 						<a href="https://ms-teams-approval.fabcelhaft.net/swagger-ui/" target="_blank" rel="noopener noreferrer">Swagger Definition</a>
+					</section>
+					<section>
+						<h2>Livedemo</h2>
+						<a href="https://ms-teams-approval.fabcelhaft.net/" target="_blank" rel="noopener noreferrer">Link</a>
+					</section>
+				</section>
+				<section>
+					<img src="img/power-automate-logo.png" height="260" alt="Power Automate Logo">
+					&emsp;
+					<img src="img/sharepoint-logo.png" height="260" alt="Sharepoint Logo">
+					&emsp;
+					<img src="img/power-apps-logo.png" height="260" alt="Power Apps Logo">
+				</section>
+				<section>
+					<section>
+						<h2>Genehmigung in Teams</h2>
+						<img src="img/teams-logo.png" height="150" alt="Microsoft Teams Logo">
+						&emsp;
+						<img src="img/power-automate-logo.png" height="150" alt="Power Automate Logo">
+						&emsp;
+						<img src="img/approvals-logo.png" height="150" alt="Microsoft Approvals Logo">
+					</section>
+					<section>
+						<h3>Anpassung der Anwendung</h3>
+						 <pre><code data-trim data-noescape data-line-numbers="1|3-8|10">
+							CloudCreationDTO cloudCreationDTO = new CloudCreationDTO(approvement);
+
+							RestTemplate restTemplate = new RestTemplate();
+
+							HttpHeaders headers = new HttpHeaders();
+							headers.setContentType(MediaType.APPLICATION_JSON);
+
+							HttpEntity&lt;CreationDTO&gt; entity = new HttpEntity<>(cloudCreationDTO,headers);
+
+							ResponseEntity&lt;String&gt; answer = restTemplate.exchange(new URI(SettingsController.cloudUrl), HttpMethod.POST, entity, String.class);
+						 </code></pre>
+						<a href="https://github.com/Fabcelhaft/ms-teams-approval-example/blob/main/src/main/java/net/fabcelhaft/msteamsapprovalexample/controller/ApprovementController.java#L55" target="_blank" rel="noopener noreferrer">Github</a>
+					</section>
+					<section>
+						<h1>LIVE</h1>
+						<a href="https://www.office.com" target="_blank" rel="noopener noreferrer">www.office.com</a>
+						<br/>
+						Vorgehen auf Folgefolien dargestellt.
+					</section>
+					<section>
+						<b>Power Automate aufrufen:</b><br/>
+						<img src="img/power-automate-logo.png" height="60" alt="Power Automate Logo"><br/>
+						URL: <a href="https://flow.microsoft.com" target="_blank" rel="noopener noreferrer">flow.microsoft.com</a>
+						<hr/>
+						<b>Auswahl von "Erstellen" im Menü</b><br/>
+						<img src="img/example1/Erstellen.png">
+					</section>
+					<section>
+						<img src="img/example1/Erstellen-site.png"><br/>
+						Erstellung: "Sofortiger Cloud Flow"
+					</section>
+					<section>
+						<img src="img/example1/sofortigen-cloud-flow-erstellen-1.png">
+					</section>
+					<section>
+						TODO
 					</section>
 				</section>
 			</div>
